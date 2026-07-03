@@ -58,8 +58,9 @@ System validation fails, alerting user about required empty fields.
 #### ⚠️ Actual Result:
 Form successfully submits; account is created with null/empty essential fields, leading to errors in checkout profile reference.
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-001_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-002"></a>🐞 BUG-002: Raw database SQL query error displayed during signup with special characters in Name field
@@ -82,8 +83,9 @@ Inputs are sanitized before query execution. User registration proceeds or handl
 #### ⚠️ Actual Result:
 Screen redirects to a database exception traceback showing raw SQL query details, indicating vulnerability to SQL injection.
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-002_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-003"></a>🐞 BUG-003: 'Remember me' session login token is not persisted after browser restart
@@ -106,8 +108,9 @@ Login session cookie remains active; header displays 'Logged in as [Name]'.
 #### ⚠️ Actual Result:
 User session is completely wiped, requiring user to log in again. Session cookie is missing expiration date (treated as session-only).
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-003_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-004"></a>🐞 BUG-004: Product Search page returns server error when search input contains query symbols like '%'
@@ -129,8 +132,9 @@ Page displays zero results found gracefully.
 #### ⚠️ Actual Result:
 Application throws standard HTTP 500 error or raw URL decoding server crash.
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-004_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-005"></a>🐞 BUG-005: Sidebar category menu collapses and fails to navigate on iOS Safari mobile viewports
@@ -153,8 +157,9 @@ Category updates smoothly and directs viewport to Women-Dress catalog page.
 #### ⚠️ Actual Result:
 Tapping expands the category menu but instantly collapses it without executing the page redirection.
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-005_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-006"></a>🐞 BUG-006: 'Back to Products' link on product details page redirects to homepage instead of filtered listing
@@ -176,8 +181,9 @@ User returns to the filtered Polo brand catalog view.
 #### ⚠️ Actual Result:
 User is redirected to the main store homepage, losing the active brand filter configuration.
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-006_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-007"></a>🐞 BUG-007: Out of stock products can be added to the cart via quick hover menu
@@ -199,8 +205,9 @@ Hover overlay button is disabled or hidden for out-of-stock items.
 #### ⚠️ Actual Result:
 Product is added to the cart successfully, allowing checkout of unfulfillable inventory.
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-007_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-008"></a>🐞 BUG-008: Cart quantity input accepts negative values and recalculates total negatively
@@ -222,8 +229,9 @@ Input validation replaces the value with '1' or displays an error.
 #### ⚠️ Actual Result:
 Cart row total and cart grand total update to a negative currency balance (e.g. -$58.00).
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-008_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-009"></a>🐞 BUG-009: Removing product row from cart page requires double-clicking the delete 'X' button
@@ -244,8 +252,9 @@ Product row is deleted immediately on a single click.
 #### ⚠️ Actual Result:
 Row remains active. Clicking the button a second time removes the item.
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-009_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-010"></a>🐞 BUG-010: Cart header count badge does not decrement immediately when deleting an item
@@ -267,8 +276,9 @@ Header cart badge count decreases to '1' dynamically.
 #### ⚠️ Actual Result:
 Header badge count remains '2' until a manual page refresh is triggered.
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-010_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-011"></a>🐞 BUG-011: Applying a valid 10% promo code deducts 100% of order value at checkout
@@ -290,8 +300,9 @@ Subtotal is reduced by exactly 10%, reflecting a 90% customer payment balance.
 #### ⚠️ Actual Result:
 Promo code deducts the entire total ($0.00 due balance), allowing orders to be processed for free.
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-011_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-012"></a>🐞 BUG-012: Checkout confirmation button remains disabled on Firefox browsers
@@ -313,8 +324,9 @@ Promo code deducts the entire total ($0.00 due balance), allowing orders to be p
 #### ⚠️ Actual Result:
 Button displays disabled cursor style and ignores clicks, blocking all Firefox users from purchasing.
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-012_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-013"></a>🐞 BUG-013: Credit card billing page throws 500 error when expiration year is entered in 2-digit format
@@ -337,8 +349,9 @@ Form intercepts input and prompts user for 4-digit format, or normalizes it to '
 #### ⚠️ Actual Result:
 Page crashes with an unhandled server exception: 'DateTimeParseException: Year must be 4 digits'.
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-013_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-014"></a>🐞 BUG-014: Tax rate on Checkout summary matches a flat 25% instead of standard 10% tax rate
@@ -359,8 +372,9 @@ Tax line displays '$1.00' (10% standard rate).
 #### ⚠️ Actual Result:
 Tax line displays '$2.50' (applying a 25% flat rate without logic explanation).
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-014_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-015"></a>🐞 BUG-015: Order confirmation email displays unrendered raw HTML tags in mail client
@@ -381,8 +395,9 @@ Email has styled tables and message elements.
 #### ⚠️ Actual Result:
 Email displays plaintext containing raw markup, e.g. `Dear Customer, <br/> Your order <b>#1029</b> was successful.`
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-015_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
 ### <a name="bug-016"></a>🐞 BUG-016: Contact Us attachment file uploader accepts executable files (.exe)
@@ -405,7 +420,8 @@ Form validation checks file extensions and blocks dangerous script file types.
 #### ⚠️ Actual Result:
 Form submits successfully, uploading the binary executable file directly to the web server storage.
 
-#### 🖼️ Screenshot Evidence:
-> _[Evidence Screenshot: BUG-016_reproduce_error.png] (Simulated in manual logs)_
+#### 🖼️ Defect Tracking & Evidence:
+*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
 
 ---
