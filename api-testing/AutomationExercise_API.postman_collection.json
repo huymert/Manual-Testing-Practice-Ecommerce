@@ -2,7 +2,7 @@
   "info": {
     "_postman_id": "c6a1e3b5-ea9a-412e-9d29-a1b7e0d37e2a",
     "name": "Automation Exercise API Testing Suite",
-    "description": "Official API Testing Collection matching 100% of the 14 practice API endpoints defined on https://automationexercise.com/api_list. Verifies status codes, application response codes, and JSON schemas.",
+    "description": "Official API Testing Collection matching 100% of the 14 practice API endpoints defined on https://automationexercise.com/api_list. Organised in a logical Lifecycle order (Setup-Test-Teardown) to guarantee 100% pass rates.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -259,7 +259,7 @@
       "response": []
     },
     {
-      "name": "API 7: POST To Verify Login with valid details",
+      "name": "API 10: POST To Verify Login with invalid details",
       "event": [
         {
           "listen": "test",
@@ -268,13 +268,13 @@
               "pm.test(\"HTTP Status code is 200\", function () {",
               "    pm.response.to.have.status(200);",
               "});",
-              "pm.test(\"Application responseCode is 200 (User Exists)\", function () {",
+              "pm.test(\"Application responseCode is 404 (User Not Found)\", function () {",
               "    var jsonData = pm.response.json();",
-              "    pm.expect(jsonData.responseCode).to.eql(200);",
+              "    pm.expect(jsonData.responseCode).to.eql(404);",
               "});",
-              "pm.test(\"Response message confirms login success\", function () {",
+              "pm.test(\"Response message displays failure\", function () {",
               "    var jsonData = pm.response.json();",
-              "    pm.expect(jsonData.message).to.eql('User exists!');",
+              "    pm.expect(jsonData.message).to.eql('User not found!');",
               "});"
             ],
             "type": "text/javascript"
@@ -289,12 +289,12 @@
           "formdata": [
             {
               "key": "email",
-              "value": "{{valid_email}}",
+              "value": "non_existent_user@example.com",
               "type": "text"
             },
             {
               "key": "password",
-              "value": "{{valid_password}}",
+              "value": "WrongPassword123",
               "type": "text"
             }
           ]
@@ -401,60 +401,6 @@
       "response": []
     },
     {
-      "name": "API 10: POST To Verify Login with invalid details",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "pm.test(\"HTTP Status code is 200\", function () {",
-              "    pm.response.to.have.status(200);",
-              "});",
-              "pm.test(\"Application responseCode is 404 (User Not Found)\", function () {",
-              "    var jsonData = pm.response.json();",
-              "    pm.expect(jsonData.responseCode).to.eql(404);",
-              "});",
-              "pm.test(\"Response message displays failure\", function () {",
-              "    var jsonData = pm.response.json();",
-              "    pm.expect(jsonData.message).to.eql('User not found!');",
-              "});"
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "formdata",
-          "formdata": [
-            {
-              "key": "email",
-              "value": "non_existent_user@example.com",
-              "type": "text"
-            },
-            {
-              "key": "password",
-              "value": "WrongPassword123",
-              "type": "text"
-            }
-          ]
-        },
-        "url": {
-          "raw": "{{base_url}}/api/verifyLogin",
-          "host": [
-            "{{base_url}}"
-          ],
-          "path": [
-            "api",
-            "verifyLogin"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
       "name": "API 11: POST To Create/Register User Account",
       "event": [
         {
@@ -490,12 +436,12 @@
             },
             {
               "key": "email",
-              "value": "qa_api_runner@example.com",
+              "value": "{{valid_email}}",
               "type": "text"
             },
             {
               "key": "password",
-              "value": "SecurePass123",
+              "value": "{{valid_password}}",
               "type": "text"
             },
             {
@@ -584,7 +530,7 @@
       "response": []
     },
     {
-      "name": "API 12: DELETE METHOD To Delete User Account",
+      "name": "API 7: POST To Verify Login with valid details",
       "event": [
         {
           "listen": "test",
@@ -593,13 +539,13 @@
               "pm.test(\"HTTP Status code is 200\", function () {",
               "    pm.response.to.have.status(200);",
               "});",
-              "pm.test(\"Application responseCode is 200\", function () {",
+              "pm.test(\"Application responseCode is 200 (User Exists)\", function () {",
               "    var jsonData = pm.response.json();",
               "    pm.expect(jsonData.responseCode).to.eql(200);",
               "});",
-              "pm.test(\"Account deletion message validation\", function () {",
+              "pm.test(\"Response message confirms login success\", function () {",
               "    var jsonData = pm.response.json();",
-              "    pm.expect(jsonData.message).to.eql('Account deleted!');",
+              "    pm.expect(jsonData.message).to.eql('User exists!');",
               "});"
             ],
             "type": "text/javascript"
@@ -607,31 +553,31 @@
         }
       ],
       "request": {
-        "method": "DELETE",
+        "method": "POST",
         "header": [],
         "body": {
           "mode": "formdata",
           "formdata": [
             {
               "key": "email",
-              "value": "qa_api_runner@example.com",
+              "value": "{{valid_email}}",
               "type": "text"
             },
             {
               "key": "password",
-              "value": "SecurePass123",
+              "value": "{{valid_password}}",
               "type": "text"
             }
           ]
         },
         "url": {
-          "raw": "{{base_url}}/api/deleteAccount",
+          "raw": "{{base_url}}/api/verifyLogin",
           "host": [
             "{{base_url}}"
           ],
           "path": [
             "api",
-            "deleteAccount"
+            "verifyLogin"
           ]
         }
       },
@@ -673,12 +619,12 @@
             },
             {
               "key": "email",
-              "value": "qa_api_runner@example.com",
+              "value": "{{valid_email}}",
               "type": "text"
             },
             {
               "key": "password",
-              "value": "SecurePass123",
+              "value": "{{valid_password}}",
               "type": "text"
             },
             {
@@ -807,6 +753,60 @@
               "key": "email",
               "value": "{{valid_email}}"
             }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API 12: DELETE METHOD To Delete User Account",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"HTTP Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Application responseCode is 200\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.responseCode).to.eql(200);",
+              "});",
+              "pm.test(\"Account deletion message validation\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.message).to.eql('Account deleted!');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "email",
+              "value": "{{valid_email}}",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "{{valid_password}}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/api/deleteAccount",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "deleteAccount"
           ]
         }
       },
