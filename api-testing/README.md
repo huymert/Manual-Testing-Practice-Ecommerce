@@ -82,6 +82,8 @@ The assertion scripts in this collection cover:
 3.  Keep default settings and click **Run Automation Exercise API...**
 4.  Verify that all test cases execute and return green checkmarks (Passing).
 
+![Postman Run Results](postman_run.png)
+
 ---
 
 ## 🖥️ Command Line Execution (Newman)

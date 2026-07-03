@@ -86,6 +86,14 @@ Explore the testing deliverables using the links below:
 
 ---
 
+## 🧪 Automated API Test Run
+
+The Postman API test suite was executed against the production environment of the SUT. All 43 assertions passed successfully, validating the functional correctness and response schemas of the backend endpoints.
+
+![Postman Run Results](api-testing/postman_run.png)
+
+---
+
 ## 📋 Jira Defect Tracking Board
 
 All 16 defects discovered during testing have been successfully documented, managed, and tracked using a custom Kanban board in **Jira Software**. 
