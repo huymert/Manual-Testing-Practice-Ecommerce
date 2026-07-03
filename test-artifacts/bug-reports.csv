@@ -1,0 +1,52 @@
+Defect ID,Title,Module,Severity,Priority,Environment,Steps to Reproduce,Expected Result,Actual Result,Status
+"BUG-001","Registration detail page permits empty inputs for mandatory profile fields","Registration & Account Management","High","High (P1)","Chrome v120 / Windows 11","1. Navigate to 'https://automationexercise.com/login'.
+2. Enter name 'Test User' and email 'new_register_empty@test.com' under Signup, click 'Signup'.
+3. Leave Password, First Name, Last Name, and Address fields empty.
+4. Click 'Create Account'.","System validation fails, alerting user about required empty fields.","Form successfully submits; account is created with null/empty essential fields, leading to errors in checkout profile reference.","Open"
+"BUG-002","Raw database SQL query error displayed during signup with special characters in Name field","Registration & Account Management","Critical","High (P1)","Chrome v120 / Windows 11","1. Navigate to signup details screen.
+2. In 'First Name' field, input: `John' OR '1'='1`.
+3. Complete remaining fields with valid values.
+4. Click 'Create Account' button.","Inputs are sanitized before query execution. User registration proceeds or handles special characters as literal text.","Screen redirects to a database exception traceback showing raw SQL query details, indicating vulnerability to SQL injection.","Open"
+"BUG-003","'Remember me' session login token is not persisted after browser restart","Login & Logout","Medium","Medium (P2)","Edge v120 / Windows 11","1. Navigate to login screen, enter valid credentials, and check 'Remember me' checkmark.
+2. Click 'Login' (Success).
+3. Close browser completely.
+4. Relaunch browser and go back to 'https://automationexercise.com'.","Login session cookie remains active; header displays 'Logged in as [Name]'.","User session is completely wiped, requiring user to log in again. Session cookie is missing expiration date (treated as session-only).","Open"
+"BUG-004","Product Search page returns server error when search input contains query symbols like '%'","Product Catalog & Search","High","Medium (P2)","Chrome v120 / Firefox v120","1. Navigate to 'Products' page.
+2. Input symbol `%` in search field.
+3. Click search button.","Page displays zero results found gracefully.","Application throws standard HTTP 500 error or raw URL decoding server crash.","Open"
+"BUG-005","Sidebar category menu collapses and fails to navigate on iOS Safari mobile viewports","Product Catalog & Search","High","High (P1)","Mobile Safari / iOS 17.2","1. Access website on iPhone Safari.
+2. Scroll to Categories section.
+3. Tap 'Women' to expand subcategories.
+4. Tap 'Dress' subcategory link.","Category updates smoothly and directs viewport to Women-Dress catalog page.","Tapping expands the category menu but instantly collapses it without executing the page redirection.","Open"
+"BUG-006","'Back to Products' link on product details page redirects to homepage instead of filtered listing","Product Catalog & Search","Low","Low (P3)","Chrome v120","1. Navigate to Products page and click 'Polo' brand in filter sidebar.
+2. Click 'View Product' for one of the filtered items.
+3. Click the 'Back to Products' button on details screen.","User returns to the filtered Polo brand catalog view.","User is redirected to the main store homepage, losing the active brand filter configuration.","Open"
+"BUG-007","Out of stock products can be added to the cart via quick hover menu","Shopping Cart & Cart Actions","High","High (P1)","Chrome v120","1. Search for a product that is out of stock (quantity = 0).
+2. Hover over the item card in product list.
+3. Click the 'Add to Cart' button from the overlay.","Hover overlay button is disabled or hidden for out-of-stock items.","Product is added to the cart successfully, allowing checkout of unfulfillable inventory.","Open"
+"BUG-008","Cart quantity input accepts negative values and recalculates total negatively","Shopping Cart & Cart Actions","Critical","High (P1)","Chrome v120 / Firefox v120","1. Add 'Blue Top' to shopping cart and navigate to Cart view.
+2. Click quantity input box.
+3. Type '-2' and hit Enter.","Input validation replaces the value with '1' or displays an error.","Cart row total and cart grand total update to a negative currency balance (e.g. -$58.00).","Open"
+"BUG-009","Removing product row from cart page requires double-clicking the delete 'X' button","Shopping Cart & Cart Actions","Low","Low (P3)","Chrome v120","1. Add a product to cart and go to Cart page.
+2. Click the red 'X' button in the product row once.","Product row is deleted immediately on a single click.","Row remains active. Clicking the button a second time removes the item.","Open"
+"BUG-010","Cart header count badge does not decrement immediately when deleting an item","Shopping Cart & Cart Actions","Medium","Medium (P2)","Firefox v120","1. Add two items to cart (badge count shows '2').
+2. Navigate to Cart page.
+3. Click delete button for one product (Row disappears).","Header cart badge count decreases to '1' dynamically.","Header badge count remains '2' until a manual page refresh is triggered.","Open"
+"BUG-011","Applying a valid 10% promo code deducts 100% of order value at checkout","Checkout, Billing & Payments","Critical","High (P1)","Chrome v120","1. Add products to cart and proceed to Checkout page.
+2. Enter valid promo code 'DISCOUNT10' (intended for 10% reduction).
+3. Click 'Apply' button.","Subtotal is reduced by exactly 10%, reflecting a 90% customer payment balance.","Promo code deducts the entire total ($0.00 due balance), allowing orders to be processed for free.","Open"
+"BUG-012","Checkout confirmation button remains disabled on Firefox browsers","Checkout, Billing & Payments","High","High (P1)","Firefox v120 / Windows 11","1. Access cart as logged-in user in Firefox browser.
+2. Click 'Proceed to Checkout'.
+3. Review address details and scroll to the bottom.","'Place Order' button is enabled and clickable.","Button displays disabled cursor style and ignores clicks, blocking all Firefox users from purchasing.","Open"
+"BUG-013","Credit card billing page throws 500 error when expiration year is entered in 2-digit format","Checkout, Billing & Payments","Critical","High (P1)","Chrome v120","1. Proceed to payment page with items.
+2. Enter valid card details.
+3. In Expiration Year field, input: `28` (instead of `2028`).
+4. Click 'Pay and Confirm Order'.","Form intercepts input and prompts user for 4-digit format, or normalizes it to '2028'.","Page crashes with an unhandled server exception: 'DateTimeParseException: Year must be 4 digits'.","Open"
+"BUG-014","Tax rate on Checkout summary matches a flat 25% instead of standard 10% tax rate","Checkout, Billing & Payments","Medium","Medium (P2)","Chrome v120","1. Add a $10.00 product to cart and checkout.
+2. Look at Tax calculation line in totals summary.","Tax line displays '$1.00' (10% standard rate).","Tax line displays '$2.50' (applying a 25% flat rate without logic explanation).","Open"
+"BUG-015","Order confirmation email displays unrendered raw HTML tags in mail client","Checkout, Billing & Payments","Low","Low (P3)","Gmail Mail Client / Chrome v120","1. Checkout and purchase items successfully.
+2. Open order confirmation email received in inbox.","Email has styled tables and message elements.","Email displays plaintext containing raw markup, e.g. `Dear Customer, <br/> Your order <b>#1029</b> was successful.`","Open"
+"BUG-016","Contact Us attachment file uploader accepts executable files (.exe)","General & Contact Us","High","High (P1)","Chrome v120","1. Go to Contact Us page.
+2. Fill mandatory fields.
+3. Click file upload button, select an executable file (`shell.exe`).
+4. Click 'Submit'.","Form validation checks file extensions and blocks dangerous script file types.","Form submits successfully, uploading the binary executable file directly to the web server storage.","Open"

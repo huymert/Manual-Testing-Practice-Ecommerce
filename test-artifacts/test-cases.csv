@@ -1,0 +1,133 @@
+Test Case ID,Module,Title,Preconditions,Steps,Expected Result,Status
+"TC-REG-001","Registration & Account Management","Register successfully with all valid required fields","User is on the Signup page (https://automationexercise.com/login)","1. Enter valid Name and Email in the Signup section.
+2. Click 'Signup' button.
+3. Complete the 'Enter Account Information' form (Password, First Name, Last Name, Address, State, City, Zipcode, Mobile Number).
+4. Click 'Create Account' button.","Account is created successfully, user is logged in automatically, and 'ACCOUNT CREATED!' page is displayed.","Pass"
+"TC-REG-002","Registration & Account Management","Register successfully with all optional fields filled","User is on the Signup page","1. Enter valid Name and Email and click 'Signup'.
+2. Fill all mandatory fields.
+3. Fill optional fields: Title, Date of Birth, Newsletter checkbox, Special offers checkbox, Company, Address 2.
+4. Click 'Create Account'.","Account is created successfully with all profile details saved correctly.","Pass"
+"TC-REG-003","Registration & Account Management","Register with an email address that is already registered","An account with email 'existing_user@example.com' already exists.","1. Enter Name and 'existing_user@example.com' in the Signup section.
+2. Click 'Signup' button.","Form submission is blocked, and validation message 'Email Address already exist!' is displayed.","Pass"
+"TC-REG-004","Registration & Account Management","Register with invalid email format","User is on the Signup page","1. Enter Name and invalid email formats (e.g. 'user@', 'user@domain', 'user.domain.com').
+2. Click 'Signup' button.","HTML5 validation error blocks form submission, requiring an '@' and a valid domain format.","Pass"
+"TC-REG-005","Registration & Account Management","Register leaving required fields empty","User is on the Signup page","1. Enter Name and valid Email and click 'Signup'.
+2. On the Account details page, leave mandatory fields (Password, First Name, Last Name) empty.
+3. Click 'Create Account' button.","Form validation triggers indicating empty fields; page remains on details form and does not submit to server.","Fail (Ref: BUG-001)"
+"TC-REG-006","Registration & Account Management","Register with special characters / SQL syntax in Name fields","User is on the Signup page","1. Enter a name containing quotes and database injection syntax (e.g., `' OR '1'='1`) in 'First Name' or 'Last Name'.
+2. Fill other required fields.
+3. Click 'Create Account'.","Input is properly sanitized. Account is created, or a validation error prevents database syntax execution. No raw SQL errors are shown.","Fail (Ref: BUG-002)"
+"TC-REG-007","Registration & Account Management","Register with password less than minimum length","User is on the Signup page","1. Enter valid Name and Email and click 'Signup'.
+2. Input a password of 1 character.
+3. Click 'Create Account'.","Validation error is displayed indicating password must be at least 6 characters.","Pass"
+"TC-REG-008","Registration & Account Management","Verify password fields hide inputs by default","User is on the details signup form","1. Type text into the Password field.","Characters typed are masked as dots or asterisks for privacy.","Pass"
+"TC-REG-009","Registration & Account Management","Verify account creation immediately establishes session","User is filling the account creation form","1. Fill all required fields.
+2. Click 'Create Account'.
+3. Click 'Continue' on the Account Created page.","Logged-in session is active, and header displays 'Logged in as [Username]'.","Pass"
+"TC-REG-010","Registration & Account Management","Verify delete account functionality removes user from system","User is logged in","1. Click 'Delete Account' link in the header menu.
+2. Confirm account deletion.
+3. Try logging in again with the deleted credentials.","Account is deleted. Header shows 'ACCOUNT DELETED!'. Re-login attempt fails with incorrect credentials.","Pass"
+"TC-LOG-001","Login & Logout","Login successfully with valid registered credentials","A registered user exists (test_qa@example.com / Password123)","1. Navigate to Login page.
+2. Enter 'test_qa@example.com' in the Login email field.
+3. Enter 'Password123' in the password field.
+4. Click 'Login' button.","User is redirected to the home page, and header displays 'Logged in as [Name]'.","Pass"
+"TC-LOG-002","Login & Logout","Login failed with unregistered email","Email 'not_registered@example.com' does not exist in system","1. Navigate to Login page.
+2. Enter 'not_registered@example.com' and password 'Password123'.
+3. Click 'Login'.","Login fails. Error message 'Your email or password is incorrect!' is displayed.","Pass"
+"TC-LOG-003","Login & Logout","Login failed with incorrect password for registered email","Registered email exists (test_qa@example.com)","1. Navigate to Login page.
+2. Enter 'test_qa@example.com' and incorrect password 'WrongPassword'.
+3. Click 'Login'.","Login fails. Error message 'Your email or password is incorrect!' is displayed.","Pass"
+"TC-LOG-004","Login & Logout","Login failed with empty email and password fields","User is on the Login page","1. Leave email and password fields empty.
+2. Click 'Login'.","HTML5 validation message is displayed on empty fields, blocking form submission.","Pass"
+"TC-LOG-005","Login & Logout","Verify session persistence using 'Remember me' option","User is on the Login page","1. Enter valid email and password.
+2. Check the 'Remember me' / session persist checkbox (if present) and log in.
+3. Close the browser window.
+4. Open browser again and navigate to homepage.","User remains logged in without being prompted to login again.","Fail (Ref: BUG-003)"
+"TC-LOG-006","Login & Logout","Verify password field toggles input visibility","User is on the Login page","1. Enter password 'Password123' in the password field.
+2. Click on the eye/toggle icon (if available) to show password.
+3. Click it again to hide.","First click reveals password characters as plain text; second click masks them again.","Pass"
+"TC-LOG-007","Login & Logout","Verify successful logout terminates user session","User is logged in and on the homepage","1. Click 'Logout' link in the header menu.
+2. Click browser 'Back' button.","User is redirected to the login page. Clicking Back does not restore the logged-in session, and private pages are inaccessible.","Pass"
+"TC-LOG-008","Login & Logout","Verify redirection to login page when accessing checkout without authorization","User is guest (not logged in) and has products in cart","1. Navigate to Cart page.
+2. Click 'Proceed To Checkout' button.","A modal popup appears requiring user to 'Register / Login' to proceed to checkout.","Pass"
+"TC-LOG-009","Login & Logout","Verify account lockout after multiple failed login attempts","Registered account exists","1. Enter valid email and incorrect password 5 times consecutively.","System temporarily locks the account or displays a Captcha challenge to prevent brute force attacks.","Pass"
+"TC-LOG-010","Login & Logout","Verify reset password request functionality","User is on the Login page","1. Click 'Forgot Password' or similar reset link.
+2. Enter registered email address.
+3. Click 'Submit'.","System displays confirmation that a password reset link has been sent to the email address.","Pass"
+"TC-CAT-001","Product Catalog & Search","Verify navigation to Product page and product list rendering","User is on homepage","1. Click 'Products' link in the header menu.
+2. Scroll down to verify product cards are loaded.","User is redirected to 'ALL PRODUCTS' page. Products list displays image, title, price, and 'Add to cart' buttons.","Pass"
+"TC-CAT-002","Product Catalog & Search","Search for a product using exact matching product name","User is on Products page. Target product 'Blue Top' exists.","1. Enter 'Blue Top' in the search input field.
+2. Click the search button/icon.","Products page reload displays 'SEARCHED PRODUCTS' title, listing 'Blue Top' as the primary result.","Pass"
+"TC-CAT-003","Product Catalog & Search","Search for a product using partial match query","User is on Products page","1. Enter 'Dress' in the search input.
+2. Click search button.","All products containing the word 'Dress' (e.g. 'Sleeveless Dress', 'Fancy Green Dress') are displayed in search results.","Pass"
+"TC-CAT-004","Product Catalog & Search","Search for a product with non-existent keyword","User is on Products page","1. Enter 'NonExistentItem123' in search input.
+2. Click search button.","Empty product list is displayed with a 'No products found' or similar friendly status message.","Pass"
+"TC-CAT-005","Product Catalog & Search","Search for a product using special characters","User is on Products page","1. Enter special characters (e.g., `%`, `&`, `*`, `'`) in the search input.
+2. Click search button.","Query is handled gracefully. Results either show empty (no match) or sanitized matches. No database error pages are shown.","Fail (Ref: BUG-004)"
+"TC-CAT-006","Product Catalog & Search","Verify category filtering displays correct matching items","User is on homepage or Products page. Sidebar categories are visible.","1. In the sidebar, click on 'Women' category.
+2. Click on 'Dress' sub-category.","Product list updates to display 'WOMEN - DRESS PRODUCTS' only, showing matching items.","Pass"
+"TC-CAT-007","Product Catalog & Search","Verify category filtering works correctly on mobile viewports","Responsive mobile viewport simulated (e.g. iPhone 12 Pro via Chrome DevTools)","1. Expand category dropdown sidebar menu on mobile layout.
+2. Click 'Men' -> 'Tshirts'.","Category sub-menu expands smoothly and navigates to the 'MEN - TSHIRTS PRODUCTS' page.","Fail (Ref: BUG-005)"
+"TC-CAT-008","Product Catalog & Search","Verify viewing details of a specific product","User is on Products list page","1. Click 'View Product' button on the first product card ('Blue Top').","Product details page opens. Details like Name, Category, Price, Availability, Condition, and Brand are displayed alongside the image.","Pass"
+"TC-CAT-009","Product Catalog & Search","Verify brand sidebar filters products correctly","User is on Products page. Brands sidebar is visible.","1. Click on the 'Polo' brand link in the Brands sidebar list.","User is redirected to 'BRAND - POLO PRODUCTS' page, listing only Polo branded items.","Pass"
+"TC-CAT-010","Product Catalog & Search","Verify 'Back to Products' link on details page returns to previous list state","User filtered products by 'Polo' brand, then clicked 'View Product' on an item.","1. Click 'Back to Products' link / button on product details page.","User is returned to the filtered 'BRAND - POLO PRODUCTS' page, retaining previous filter context.","Fail (Ref: BUG-006)"
+"TC-CRT-001","Shopping Cart & Cart Actions","Add a single product to cart from Products list","User is on Products page. Cart is empty.","1. Hover over the first product ('Blue Top').
+2. Click 'Add to cart'.
+3. Click 'Continue Shopping' in the confirmation modal.","Product is added. Cart count in header updates to 1. Cart status modal confirms success.","Pass"
+"TC-CRT-002","Shopping Cart & Cart Actions","Add multiple products to cart and verify details","User is on Products page","1. Hover over Product 1 and click 'Add to cart'.
+2. Click 'Continue Shopping'.
+3. Hover over Product 2 and click 'Add to cart'.
+4. Click 'View Cart'.","Cart page is displayed with both products. Product names, prices, quantities, and totals match the selected items.","Pass"
+"TC-CRT-003","Shopping Cart & Cart Actions","Add same product multiple times and verify quantity increment","User is on Products page","1. Click 'Add to cart' on 'Blue Top'.
+2. Click 'Continue Shopping'.
+3. Click 'Add to cart' on 'Blue Top' again.
+4. Click 'View Cart'.","Cart page shows 'Blue Top' as a single row with Quantity equal to 2, and the row total is double the single unit price.","Pass"
+"TC-CRT-004","Shopping Cart & Cart Actions","Verify add is blocked for zero-stock / out-of-stock items","An item exists in catalog with stock = 0.","1. Navigate to the detail page of the out-of-stock product.
+2. Attempt to click 'Add to Cart' button.","'Add to Cart' button is disabled, or a message 'Out of stock' prevents adding the item to the cart.","Fail (Ref: BUG-007)"
+"TC-CRT-005","Shopping Cart & Cart Actions","Modify quantity directly in product details before adding","User is on details page of 'Blue Top'","1. Change quantity input field from 1 to 4.
+2. Click 'Add to cart' button.
+3. Click 'View Cart'.","Cart page shows 'Blue Top' with quantity 4 and matching price calculations.","Pass"
+"TC-CRT-006","Shopping Cart & Cart Actions","Verify negative or zero quantities are blocked in cart input","User has 1 item in the cart. User is on Cart page.","1. Click quantity field of the product.
+2. Type '-3' or '0' and press Enter.","Input is blocked/ignored, or resets back to 1. Quantity cannot be zero or negative.","Fail (Ref: BUG-008)"
+"TC-CRT-007","Shopping Cart & Cart Actions","Remove an item from cart using the 'X' button","User has 1 item in cart. User is on Cart page.","1. Click the red 'X' button (Cart Delete) next to the product row.","The item is immediately removed from the cart page with a single click, and 'Cart is empty!' message is displayed.","Fail (Ref: BUG-009)"
+"TC-CRT-008","Shopping Cart & Cart Actions","Verify cart count badge in header updates dynamically","User is on Cart page with 1 item.","1. Click the delete button next to the product row.
+2. Observe the cart icon/badge in the header menu.","The cart badge count changes from '1' to '0' dynamically without requiring a manual page refresh.","Fail (Ref: BUG-010)"
+"TC-CRT-009","Shopping Cart & Cart Actions","Verify cart persistence across logout/login sessions","User is logged in. Product is in the cart.","1. Log out of the account.
+2. Log in again with the same credentials.
+3. Navigate to the Cart page.","The product added before logging out is still preserved in the shopping cart.","Pass"
+"TC-CRT-010","Shopping Cart & Cart Actions","Verify subtotal and grand total update automatically on quantity change","User has items in the cart. User is on Cart page.","1. Change quantity of an item using increment arrows.
+2. Observe total price for the item row and cart grand total.","Totals recalculate and update instantly on UI.","Pass"
+"TC-CHK-001","Checkout, Billing & Payments","Verify checkout navigation for logged-in user","User is logged in. Products are in cart.","1. Navigate to Cart page.
+2. Click 'Proceed To Checkout' button.","User is redirected to 'Checkout' page displaying delivery address details and order review tables.","Pass"
+"TC-CHK-002","Checkout, Billing & Payments","Verify Address Details page displays correct default user details","User is logged in. User details exist in profile.","1. Navigate to Checkout page.
+2. Compare 'Your Delivery Address' and 'Your Billing Address' text against details filled during registration.","Delivery and Billing address cards exactly match the profile information (Name, Company, Address, City, State, Country, Phone).","Pass"
+"TC-CHK-003","Checkout, Billing & Payments","Verify user can add comments/notes to order","User is on Checkout page","1. Scroll down to 'Description' / comments text area.
+2. Enter text: 'Please leave package at the door'.
+3. Click 'Place Order' button.","Order comments are registered, and user is navigated to Payment page.","Pass"
+"TC-CHK-004","Checkout, Billing & Payments","Verify Payment page details input masking","User is on Payment page","1. Locate credit card CVV and Card Number fields.
+2. Enter digits.","Digits in CVV and Card Number are masked or securely displayed according to standard e-commerce security expectations.","Pass"
+"TC-CHK-005","Checkout, Billing & Payments","Verify place order with valid promo code discounts price","User is on Checkout page. A valid promo code (e.g. 'PROMO10' for 10% off) is entered.","1. Enter promo code 'PROMO10' in the promo input.
+2. Click 'Apply'.","Promo code reduces checkout total by 10% correctly. Discount amount is clearly shown in price breakdown.","Fail (Ref: BUG-011)"
+"TC-CHK-006","Checkout, Billing & Payments","Verify checkout button is active and functional in all major browsers","User is on Cart page in Firefox browser.","1. Fill in all billing and shipping requirements.
+2. Check the 'Proceed To Checkout' button status.","Checkout button is enabled, hover states trigger, and clicking it redirects to checkout address verification.","Fail (Ref: BUG-012)"
+"TC-CHK-007","Checkout, Billing & Payments","Pay using credit card with 2-digit expiration year","User is on Payment page","1. Fill Name on Card and Card Number.
+2. Enter CVV: '123'.
+3. Enter Expiration MM: '12'.
+4. Enter Expiration YYYY: '28' (2-digit format instead of '2028').
+5. Click 'Pay and Confirm Order'.","System accepts 2-digit format or raises validation warning. No system crashes occur. Order completes successfully.","Fail (Ref: BUG-013)"
+"TC-CHK-008","Checkout, Billing & Payments","Pay using credit card with standard valid parameters","User is on Payment page","1. Enter valid Name, Card Number, CVV (e.g. '311'), Expiry MM ('08'), Expiry YYYY ('2030').
+2. Click 'Pay and Confirm Order'.","Payment succeeds. User is navigated to 'ORDER PLACED!' confirmation screen showing success message.","Pass"
+"TC-CHK-009","Checkout, Billing & Payments","Verify Tax/VAT calculations are correct on order breakdown","User is on Checkout summary review","1. Review subtotal and VAT/Tax percentages.
+2. Calculate expected tax mathematically and compare to displayed tax.","Displayed tax matches the calculated percentage of subtotal exactly (e.g. 10% tax on $100 should show $10.00).","Fail (Ref: BUG-014)"
+"TC-CHK-010","Checkout, Billing & Payments","Verify order confirmation screen displays Invoice Download link","User has just completed a payment","1. Check the 'ORDER PLACED!' page UI.","Page displays success message, 'Download Invoice' button/link, and 'Continue' button.","Pass"
+"TC-CHK-011","Checkout, Billing & Payments","Verify Download Invoice option outputs valid document","User is on Order Placed page","1. Click 'Download Invoice' button.
+2. Save and open the downloaded text/pdf file.","Invoice file downloads successfully and contains correct customer details, product rows, and final prices.","Pass"
+"TC-CHK-012","Checkout, Billing & Payments","Verify order confirmation email formatting","User successfully placed an order.","1. Open mock mail inbox connected to the test account.
+2. Locate and open the order confirmation email.","Email body displays clean text formatting, order summary tables, and branding graphics without unrendered raw HTML markup.","Fail (Ref: BUG-015)"
+"TC-GEN-001","General & Contact Us","Submit Contact Us form with unsupported attachment formats","User is on Contact Us page (https://automationexercise.com/contact_us)","1. Enter Name, Email, Subject, and Message.
+2. In 'Upload File' input, select an executable file (e.g. 'malicious_test.exe').
+3. Click 'Submit' button.
+4. Click 'OK' on browser confirm popup.","Validation error prevents file upload of executable script extensions (.exe, .bat, etc.) to ensure server security.","Fail (Ref: BUG-016)"
+"TC-GEN-002","General & Contact Us","Verify newsletter subscription validation","User is at homepage footer section","1. Scroll down to 'SUBSCRIPTION' section.
+2. Enter invalid email (e.g., 'no_at_symbol.com').
+3. Click arrow submit button.","Browser validation block triggers. Correct input allows success message 'You have been successfully subscribed!'.","Pass"
