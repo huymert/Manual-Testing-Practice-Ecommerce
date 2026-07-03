@@ -67,7 +67,7 @@ Explore the testing deliverables using the links below:
 │   └── bug-reports.csv                    <-- Bug list database for importing to Jira/Trello
 └── api-testing/
     ├── README.md                          <-- Instructions to import and run Postman tests
-    ├── AutomationExercise_API.postman_collection.json    <-- 12 requests with JS assertions
+    ├── AutomationExercise_API.postman_collection.json    <-- 14 requests with JS assertions
     └── AutomationExercise_Env.postman_environment.json   <-- Collection environment variables
 ```
 
