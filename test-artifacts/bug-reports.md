@@ -59,8 +59,8 @@ System validation fails, alerting user about required empty fields.
 Form successfully submits; account is created with null/empty essential fields, leading to errors in checkout profile reference.
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-1](https://hahuy1-1.atlassian.net/browse/AEMT-1) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-1 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-002"></a>🐞 BUG-002: Raw database SQL query error displayed during signup with special characters in Name field
@@ -84,8 +84,8 @@ Inputs are sanitized before query execution. User registration proceeds or handl
 Screen redirects to a database exception traceback showing raw SQL query details, indicating vulnerability to SQL injection.
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-2](https://hahuy1-1.atlassian.net/browse/AEMT-2) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-2 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-003"></a>🐞 BUG-003: 'Remember me' session login token is not persisted after browser restart
@@ -109,8 +109,8 @@ Login session cookie remains active; header displays 'Logged in as [Name]'.
 User session is completely wiped, requiring user to log in again. Session cookie is missing expiration date (treated as session-only).
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-3](https://hahuy1-1.atlassian.net/browse/AEMT-3) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-3 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-004"></a>🐞 BUG-004: Product Search page returns server error when search input contains query symbols like '%'
@@ -133,8 +133,8 @@ Page displays zero results found gracefully.
 Application throws standard HTTP 500 error or raw URL decoding server crash.
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-4](https://hahuy1-1.atlassian.net/browse/AEMT-4) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-4 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-005"></a>🐞 BUG-005: Sidebar category menu collapses and fails to navigate on iOS Safari mobile viewports
@@ -158,8 +158,8 @@ Category updates smoothly and directs viewport to Women-Dress catalog page.
 Tapping expands the category menu but instantly collapses it without executing the page redirection.
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-5](https://hahuy1-1.atlassian.net/browse/AEMT-5) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-5 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-006"></a>🐞 BUG-006: 'Back to Products' link on product details page redirects to homepage instead of filtered listing
@@ -182,8 +182,8 @@ User returns to the filtered Polo brand catalog view.
 User is redirected to the main store homepage, losing the active brand filter configuration.
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-6](https://hahuy1-1.atlassian.net/browse/AEMT-6) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-6 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-007"></a>🐞 BUG-007: Out of stock products can be added to the cart via quick hover menu
@@ -206,8 +206,8 @@ Hover overlay button is disabled or hidden for out-of-stock items.
 Product is added to the cart successfully, allowing checkout of unfulfillable inventory.
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-7](https://hahuy1-1.atlassian.net/browse/AEMT-7) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-7 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-008"></a>🐞 BUG-008: Cart quantity input accepts negative values and recalculates total negatively
@@ -230,8 +230,8 @@ Input validation replaces the value with '1' or displays an error.
 Cart row total and cart grand total update to a negative currency balance (e.g. -$58.00).
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-8](https://hahuy1-1.atlassian.net/browse/AEMT-8) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-8 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-009"></a>🐞 BUG-009: Removing product row from cart page requires double-clicking the delete 'X' button
@@ -253,8 +253,8 @@ Product row is deleted immediately on a single click.
 Row remains active. Clicking the button a second time removes the item.
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-9](https://hahuy1-1.atlassian.net/browse/AEMT-9) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-9 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-010"></a>🐞 BUG-010: Cart header count badge does not decrement immediately when deleting an item
@@ -277,8 +277,8 @@ Header cart badge count decreases to '1' dynamically.
 Header badge count remains '2' until a manual page refresh is triggered.
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-10](https://hahuy1-1.atlassian.net/browse/AEMT-10) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-10 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-011"></a>🐞 BUG-011: Applying a valid 10% promo code deducts 100% of order value at checkout
@@ -301,8 +301,8 @@ Subtotal is reduced by exactly 10%, reflecting a 90% customer payment balance.
 Promo code deducts the entire total ($0.00 due balance), allowing orders to be processed for free.
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-11](https://hahuy1-1.atlassian.net/browse/AEMT-11) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-11 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-012"></a>🐞 BUG-012: Checkout confirmation button remains disabled on Firefox browsers
@@ -325,8 +325,8 @@ Promo code deducts the entire total ($0.00 due balance), allowing orders to be p
 Button displays disabled cursor style and ignores clicks, blocking all Firefox users from purchasing.
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-12](https://hahuy1-1.atlassian.net/browse/AEMT-12) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-12 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-013"></a>🐞 BUG-013: Credit card billing page throws 500 error when expiration year is entered in 2-digit format
@@ -350,8 +350,8 @@ Form intercepts input and prompts user for 4-digit format, or normalizes it to '
 Page crashes with an unhandled server exception: 'DateTimeParseException: Year must be 4 digits'.
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-13](https://hahuy1-1.atlassian.net/browse/AEMT-13) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-13 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-014"></a>🐞 BUG-014: Tax rate on Checkout summary matches a flat 25% instead of standard 10% tax rate
@@ -373,8 +373,8 @@ Tax line displays '$1.00' (10% standard rate).
 Tax line displays '$2.50' (applying a 25% flat rate without logic explanation).
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-14](https://hahuy1-1.atlassian.net/browse/AEMT-14) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-14 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-015"></a>🐞 BUG-015: Order confirmation email displays unrendered raw HTML tags in mail client
@@ -396,8 +396,8 @@ Email has styled tables and message elements.
 Email displays plaintext containing raw markup, e.g. `Dear Customer, <br/> Your order <b>#1029</b> was successful.`
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-15](https://hahuy1-1.atlassian.net/browse/AEMT-15) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-15 (including environment details and reproduction console logs)
 
 ---
 ### <a name="bug-016"></a>🐞 BUG-016: Contact Us attachment file uploader accepts executable files (.exe)
@@ -421,7 +421,7 @@ Form validation checks file extensions and blocks dangerous script file types.
 Form submits successfully, uploading the binary executable file directly to the web server storage.
 
 #### 🖼️ Defect Tracking & Evidence:
-*   **Jira Status:** Mapped and tracked on active Kanban board (See [Jira Board Screenshot](../README.md#-jira-defect-tracking-board))
-*   **Jira Ticket:** Screenshots and environment logs are attached directly to the Jira ticket (See [Jira Ticket Detail](../README.md#-jira-defect-tracking-board))
+*   **Jira Ticket:** [AEMT-16](https://hahuy1-1.atlassian.net/browse/AEMT-16) (Active in project backlog)
+*   **Evidence Screenshot:** Attached directly to Jira ticket AEMT-16 (including environment details and reproduction console logs)
 
 ---
