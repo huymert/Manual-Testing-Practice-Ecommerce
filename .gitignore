@@ -1,0 +1,20 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary Office locks
+~$*.xlsx
+~$*.docx
+~$*.pptx
+
+# IDE & Editor caches
+.vscode/
+.idea/
+*.swp
+*.tmp
