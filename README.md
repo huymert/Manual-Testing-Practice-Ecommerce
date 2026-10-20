@@ -1,26 +1,26 @@
 # Manual & API Testing Practice: E-Commerce Web Application (Automation Exercise)
 
 [![Testing SUT: Automation Exercise](https://img.shields.io/badge/SUT-Automation_Exercise-ff69b4.svg)](https://automationexercise.com/)
-[![QA Role: Senior QA Engineer](https://img.shields.io/badge/QA_Role-Senior_QA_Lead-1F4E78.svg)](#)
+[![Methodology: ISTQB Standard](https://img.shields.io/badge/Methodology-ISTQB_Standard-1F4E78.svg)](#)
 [![Testing Type: Manual & API](https://img.shields.io/badge/Testing_Type-Manual_%26_API-blue.svg)](#)
 [![API Testing: Postman](https://img.shields.io/badge/API_Testing-Postman-orange.svg)](#)
 [![Test Cases: 54 Designed](https://img.shields.io/badge/Test_Cases-54_Designed-green.svg)](#)
 [![Defects Logged: 16 Bugs](https://img.shields.io/badge/Defects_Logged-16_Bugs-red.svg)](#)
 [![Test Plan: Word .docx & PDF](https://img.shields.io/badge/Test_Plan-Word_.docx_%26_PDF-2B6CB0.svg)](#)
 
-A comprehensive, industry-standard Quality Assurance portfolio project targeting the live e-commerce platform **[Automation Exercise](https://automationexercise.com)**. 
+A comprehensive Quality Assurance and end-to-end testing project targeting the live e-commerce web platform **[Automation Exercise](https://automationexercise.com)**. 
 
-Designed and curated from the perspective of a **Senior QA Engineer / QA Lead**, this repository demonstrates complete mastery over the software testing lifecycle: from **Lightweight Test Planning** and **Formal ISTQB Test Design Techniques** (Equivalence Partitioning, Boundary Value Analysis, Decision Tables, State Transitions) to **Defect Governance**, **Evidence Capture**, and **Automated REST API Contract Assertions**.
+This repository implements a complete, structured software testing lifecycle: from **Lightweight Test Planning** and **Formal ISTQB Test Design Techniques** (Equivalence Partitioning, Boundary Value Analysis, Decision Tables, State Transitions) to **Defect Governance**, **Defect Proof Capture**, and **Automated REST API Contract Assertions**.
 
 ---
 
 ## 🔗 Live Deliverables & Interactive Links
 * 📊 **[Interactive Google Sheets Test Cases & Defect Suite](https://docs.google.com/spreadsheets/d/1yiyinIh0wybSdaX7NRvY4mFZIWfkzaT6/edit?usp=sharing&ouid=100062310304020489867&rtpof=true&sd=true)** — View the live 54 test cases matrix with color-coded execution states and defect management log online.
-* 📄 **[Official Software Test Plan (PDF)](docs/TestPlan_AutomationExercise.pdf)** — Executive PDF deliverable ready for portfolio presentation and interview submission.
+* 📄 **[Official Software Test Plan (PDF)](docs/TestPlan_AutomationExercise.pdf)** — Executive IEEE-829 lightweight test plan covering In-Scope & Out-of-Scope rationale, quality gates, and SLA defect governance.
 
 ---
 
-## 🎯 Key Deliverables for Interviewers & Reviewers
+## 🎯 Core Project Deliverables
 
 | Deliverable Artifact | Formats | Location in Repository | Highlights |
 | :--- | :---: | :--- | :--- |
@@ -70,7 +70,7 @@ A total of **16 defects** were identified, documented, and cross-referenced with
 
 ## 🧠 Applied ISTQB Test Design Techniques
 
-To demonstrate senior-level software testing knowledge, test cases specifically apply formal ISTQB Black-Box techniques:
+Test cases are systematically designed and executed using formal ISTQB Black-Box test design techniques:
 
 1.  **Equivalence Partitioning (EP):**
     *   *Email syntax:* Valid format (`name@domain.com`) vs Invalid missing `@` vs Invalid missing domain vs Duplicate database email.

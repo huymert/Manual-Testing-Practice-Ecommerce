@@ -48,7 +48,7 @@ The primary objective is to verify business process integrity, eliminate revenue
 
 ## 3. Test Strategy & Applied ISTQB Test Techniques
 
-To showcase enterprise-grade QA competence, test cases are systematically designed using formal Black-Box and Experience-Based Test Design Techniques aligned with **ISTQB Certified Tester Advanced Level (CTAL)** standards:
+Test cases are systematically designed using formal Black-Box and Experience-Based Test Design Techniques aligned with **ISTQB (International Software Testing Qualifications Board)** standards:
 
 ```mermaid
 flowchart TD
